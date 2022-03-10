@@ -6,22 +6,14 @@ const addStudent = (id, name, arrayOfGrades, comment, total) => {
     const dupStu = students.filter(ele => ele.id === id)
 
     if (dupStu.length == 0) {
-        const arr = JSON.parse(arrayOfGrades);
         let total = 0
-        arr.forEach(ele => {
-                total += parseInt(ele)
-            })
-            /*  let arr = arrayOfGrades[0].split(',')
-             let narr = []
-             let total = 0
-             arr.forEach(ele => {
-                 narr.push(parseInt(ele))
-                 total += parseInt(ele)
-             }) */
+        arrayOfGrades.forEach(ele => {
+            total += parseInt(ele)
+        })
         students.push({
             id,
             name,
-            arrayOfGrades: arr,
+            arrayOfGrades,
             comment,
             total
         })
