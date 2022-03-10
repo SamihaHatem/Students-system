@@ -1,20 +1,10 @@
 const fs = require('fs');
 const { parse } = require('path');
 
-const sumOfArray = (Array) => {
-    let total = 0
-    Array.forEach(ele => {
-        total += parseInt(ele)
-    })
-    return total;
-}
-
-const addStudent = (id, name, arrayOfGrades, comment) => {
+const addStudent = (id, name, arrayOfGrades, comment, total) => {
     const students = loadStudents();
     const dupStu = students.filter(ele => ele.id === id)
-
     if (dupStu.length == 0) {
-        total = sumOfArray(arrayOfGrades)
         students.push({
             id,
             name,

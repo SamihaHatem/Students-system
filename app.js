@@ -2,6 +2,15 @@ const { demandOption, number, array } = require("yargs")
 const yargs = require("yargs")
 const myModule = require('./students')
 
+const sumOfArray = (Array) => {
+    let total = 0
+    Array.forEach(ele => {
+        total += parseInt(ele)
+    })
+
+    return total;
+}
+
 yargs.command({
     command: "add",
     describe: "Add New Student to Students.json",
@@ -27,10 +36,11 @@ yargs.command({
         }
     },
     handler: (x) => {
+        const total = sumOfArray(x.arrayOfGrades)
         if (x.comment)
-            myModule.addStudent(x.id, x.name, x.arrayOfGrades, x.comment)
+            myModule.addStudent(x.id, x.name, x.arrayOfGrades, x.comment, total)
         else
-            myModule.addStudent(x.id, x.name, x.arrayOfGrades, "")
+            myModule.addStudent(x.id, x.name, x.arrayOfGrades, "", total)
     }
 })
 
