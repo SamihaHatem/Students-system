@@ -1,7 +1,7 @@
 const fs = require('fs');
 const { parse } = require('path');
 
-const addStudent = (id, name, arrayOfGrades, comment, total) => {
+const addStudent = (id, name, arrayOfGrades, comment) => {
     const students = loadStudents();
     const dupStu = students.filter(ele => ele.id === id)
 
