@@ -1,3 +1,3 @@
 # Students-system
 
-Add/Delete/readOne/readAll operations using NodeJS - yargs
+Add / Delete / readOne / readAll  operations using NodeJS - yargs
